@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input} from '@angular/core';
 import { CounterService } from '../counter.service';
 
 @Component({
@@ -6,19 +6,21 @@ import { CounterService } from '../counter.service';
   templateUrl: './counter.component.html',
   styleUrls: ['./counter.component.scss']
 })
-export class CounterComponent implements OnInit {
 
+export class CounterComponent implements OnInit {
+  @Input()
   count: number = 0;
 
-  constructor(private counterService: CounterService) { }
+  @Output() 
+  countChange = new EventEmitter<number>();
+  
+  constructor() { }
 
   ngOnInit(): void {
-    this.count = this.counterService.getNumber();
   }
 
   buttonClicked(){
-    this.counterService.incrementNumber();
-    this.count = this.counterService.getNumber();
+    this.countChange.emit(++this.count);
   }
 
 }

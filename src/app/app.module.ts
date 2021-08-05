@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CounterComponent } from './counter/counter.component';
 import { LiczenieComponent } from './liczenie/liczenie.component';
+import { WojtasowyComponent } from './wojtasowy/wojtasowy.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CounterComponent,
-    LiczenieComponent
+    LiczenieComponent,
+    WojtasowyComponent
   ],
   imports: [
     BrowserModule,

@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { CounterService } from '../counter.service';
 
 @Component({
   selector: 'app-liczenie',
   templateUrl: './liczenie.component.html',
-  styleUrls: ['./liczenie.component.scss']
+  styleUrls: ['./liczenie.component.scss'],
 })
 export class LiczenieComponent implements OnInit {
+  public parentCount: number = 0;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
